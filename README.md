@@ -22,7 +22,7 @@ You can find general information [here](https://www.mirantis.com/labs/learning/t
 
 ### Challenge
 
-This repository contains the manifest files for the toy making application that are needed for the challenge. 
+This repository contains the manifest files for the toy manufacturing application that are needed for the challenge. 
 
 Santa mentions that he needs a way to package an application. The application is crucial for distributing presents.
 

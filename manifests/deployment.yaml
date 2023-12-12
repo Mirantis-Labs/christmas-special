@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: toy-manufacturing-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: toy-manufacturing
+  template:
+    metadata:
+      labels:
+        app: toy-manufacturing
+    spec:
+      containers:
+      - name: toy-manufacturing
+        image: jlnhnng/christmas-special:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REGION
+          value: "northpole"
+        envFrom:
+        - secretRef:
+            name: secretdata
+        volumeMounts:
+        - name: secret-volume
+          mountPath: /etc/secret
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: secretdata
